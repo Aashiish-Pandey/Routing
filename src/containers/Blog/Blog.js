@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "../../axios";
 import "./Blog.css";
 import Posts from "../Posts/Posts";
-import { Route,Link } from "react-router-dom";
+import { Route,Link ,NavLink} from "react-router-dom";
 import NewPost from './NewPost/NewPost'
 
 class Blog extends Component {
@@ -13,7 +13,14 @@ class Blog extends Component {
           <nav>
             <ul>
               <li>
-                <Link to ="/">Home</Link>
+                <NavLink to ="/" 
+                exact
+                activeClassName = "active"
+                activeStyle ={{
+                    color:"red",
+                    textDecoration:"underline"
+
+                }}>Home</NavLink>
                 <li>
                 <Link to = {{
                     pathname: '/new-post',
